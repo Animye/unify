@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <style>
+    h3 {
+      font-size: 30px;
+      width: 200px;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h3 value="1">hollo</h3>
+    <h3 value="1">hollo</h3>
+    <h3 value="1">hollo</h3>
+    <h3 value="1">hollo</h3>
+    <h3 value="1">hollo</h3>
+    <h3 value="1">hollo</h3>
+    <h3 value="1">hollo</h3>
+    <h4>hhh</h4>
+    <script src="./js/jq.js"></script>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/hightLight.js"></script>
+    <script>
+      jQuery.fn.highLight.defaultOptions = {
+        color: 'pink',
+        backgroundColor: '#ccc'
+      }
+      $('h3').highLight({ backgroundColor: 'brown' })
+      // var num1 = _$('h3')
+      // var num2 = _$('h4')
+      // var num3 = _$('h3').attr('value', 2)
+      // var num4 = _$('h3').attr('value')
+
+      // var num5 = _$('h3').css({
+      //   'font-size': '10px',
+      //   border: '10px solid #ccc'
+      // })
+
+      // num1.changeColor('red')
+      // num2.changeColor('yellow')
+
+      // function CreatePeople() {}
+      // CreatePeople.prototype.say = function() {
+      //   console.log('hello222')
+      // }
+      // var lucy = new CreatePeople()
+      // console.log(lucy)
+      // lucy.say()
+      // function hero(name) {
+      //   this.name = name
+      // }
+      // hero.prototype = CreatePeople.prototype
+      // var zhizhu = new hero('xiaohua')
+      // console.log(zhizhu)
+      // zhizhu.say()
+
+      // function CreatePeople(name) {
+      //   this.firstName = name
+      // }
+      // CreatePeople.prototype.sayName = function() {
+      //   console.log('My first name is ' + this.firstName)
+      // }
+      // var a = new CreatePeople('张')
+      // a.sayName()
+      // function Children(name) {
+      //   this.lastName = name
+      // }
+      // Children.prototype = a
+      // Children.prototype.say = function() {
+      //   console.log('My second name is ' + this.firstName + this.lastName)
+      // }
+      // var zhangs = new Children('三')
+      // zhangs.say()
+
+      // var arr = [33, 21, 44, 32432, 55, 324, 3]
+      // var num = Math.max.apply(Math, arr)
+      // console.log(num)
+    </script>
+  </body>
+</html>

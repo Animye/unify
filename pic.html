@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <style>
+      .box {
+        width: 670px;
+        height: 329px;
+        overflow: hidden;
+        position: relative;
+      }
+      .box .pic {
+        display: flex;
+        width: 3350px;
+        height: 329px;
+        margin-left: 0;
+        transition: all 0.5s linear;
+      }
+      .but {
+        display: flex;
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        width: 100%;
+        justify-content: center;
+      }
+      .but > li {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        background-color: #fff;
+        color: #000;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+      .but .active {
+        background-color: hotpink;
+        color: #fff;
+      }
+      .box button {
+        background-color: rgba(0, 0, 0, 0);
+        text-align: center;
+        line-height: 50px;
+        position: absolute;
+        font-size: 30px;
+        font-weight: bolder;
+        color: #000;
+        top: 50%;
+        margin-top: -25px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+      }
+      .left {
+        left: 0;
+      }
+      .right {
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="pic">
+        <img src="./img/gracetan_01.jpg" alt="" />
+        <img src="./img/gracetan_02.jpg" alt="" />
+        <img src="./img/gracetan_03.jpg" alt="" />
+        <img src="./img/gracetan_04.jpg" alt="" />
+        <img src="./img/gracetan_05.jpg" alt="" />
+      </div>
+      <ul class="but">
+        <li class="active" data-num="0">1</li>
+        <li data-num="1">2</li>
+        <li data-num="2">3</li>
+        <li data-num="3">4</li>
+        <li data-num="4">5</li>
+      </ul>
+      <button class="left">〈</button> <button class="right">〉</button>
+    </div>
+    <script>
+      var pic = document.querySelector('.pic')
+      var but = document.querySelectorAll('.but>li')
+
+      // for (var i = 0; i < but.length; i++) {
+      //   but[i].onclick = function() {
+      //     for (var j = 0; j < but.length; j++) {
+      //       but[j].style.backgroundColor = '#fff'
+      //       but[j].style.color = '#000'
+      //     }
+
+      //     this.style.backgroundColor = 'hotpink'
+      //     this.style.color = '#fff'
+      //     var ind = this.getAttribute('data-num')
+      //     var ml = ind * -670 + 'px'
+      //     pic.style.marginLeft = ml
+      //   }
+      // }
+      document.querySelector('.but').onclick = function(event) {
+        var ele = event.target
+        if (ele.tagName === 'LI') {
+          //   for (var j = 0; j < but.length; j++) {
+          //     but[j].style.backgroundColor = '#fff'
+          //     but[j].style.color = '#000'
+          //   }
+          //   ele.style.backgroundColor = 'hotpink'
+          //   ele.style.color = '#fff'
+          addClass(ele, '.active')
+          var ind = ele.getAttribute('data-num') * 1
+          num = ind
+          var ml = ind * -670 + 'px'
+          pic.style.marginLeft = ml
+        }
+      }
+      var num = 0
+      document.querySelector('.right').onclick = function() {
+        num = num + 1
+        // num++
+        if (num > 4) {
+          num = 0
+        }
+
+        for (var i = 0; i < but.length; i++) {
+          but[i].style.backgroundColor = '#fff'
+          but[i].style.color = '#000'
+        }
+        console.log(num)
+
+        but[num].style.backgroundColor = 'hotpink'
+        but[num].style.color = '#fff'
+        var ml1 = num * -670 + 'px'
+        pic.style.marginLeft = ml1
+      }
+
+      document.querySelector('.left').onclick = function() {
+        num--
+        if (num < 0) {
+          num = 4
+        }
+
+        for (var i = 0; i < but.length; i++) {
+          but[i].style.backgroundColor = '#fff'
+          but[i].style.color = '#000'
+        }
+        but[num].style.backgroundColor = 'hotpink'
+        but[num].style.color = '#fff'
+        var ml1 = num * -670 + 'px'
+        pic.style.marginLeft = ml1
+      }
+
+      function addClass(show, novel) {
+        var showClass = show.className
+        if (showClass !== '') {
+          showClass = showClass + ' '
+        } else {
+          showClass = showClass + ''
+        }
+        var last = showClass + novel
+        show.className = last
+      }
+
+      function removeClass(show, novel) {
+        var showClass = ' ' + show.className + ' '
+        var re1 = /(\s+)/gi
+        showClass = showClass.replace(re1, ' ')
+        var removed = showClass.replace(' ' + novel + ' ', ' ')
+        var re2 = /(^\s+)|(\s+$)/g
+        removed = removed.replace(re2, '')
+        show.className = removed
+      }
+    </script>
+  </body>
+</html>

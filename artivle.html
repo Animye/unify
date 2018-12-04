@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+  </head>
+  <style>
+    .box {
+      width: 600px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 25px;
+      font-weight: bolder;
+    }
+    p {
+      text-indent: 32px;
+    }
+    #text {
+      width: 500px;
+      height: 200px;
+      resize: none;
+      outline: 0;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <h1>一架直升机坠落四川峨眉山景区 机上有两名驾驶员</h1>
+      <p>
+        11月18日，一架直升机坠落在峨眉山景区道路上。据峨眉山景区万年派出所民警证实，事发当日12时许，坠落直升机系一架训练机，机身有西林凤腾标志，机上有两名驾驶员，其中一名驾驶员有轻微刮伤。目前，景区相关部门正在积极参与施救，景区交通暂未受到大的影响。
+      </p>
+      <textarea id="text"></textarea> <button class="submit">提交</button>
+      <ul class="list">
+        <li>hao</li>
+        <li>good</li>
+      </ul>
+    </div>
+    <script>
+      document.querySelector('.submit').onclick = function() {
+        var val = document.querySelector('#text').value
+        if (val.trim()) {
+          if (val.trim().length > 10) {
+            var li = document.createElement('li')
+            li.innerHTML = `${val.trim()} <button class='del'>删除</button>`
+            // document.querySelector('.list').appendChild(li)
+            var firstLi = document.querySelectorAll('.list li')[0]
+            document.querySelector('.list').insertBefore(li, firstLi)
+            document.querySelector('#text').value = ''
+          } else {
+            alert('有效字符长度不够')
+          }
+        } else {
+          alert('输入不能为空')
+        }
+      }
+      document.querySelector('.list').onclick = function(event) {
+        var ele = event.target
+        var eleName = ele.tagName
+        if (eleName === 'BUTTON' && ele.className === 'del') {
+          this.removeChild(ele.parentNode)
+        }
+      }
+    </script>
+  </body>
+</html>

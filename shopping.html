@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+    /* ul>li{
+      float:left;
+      width: 100%;
+    } */
+    ul {
+      width: 800px;
+    }
+    ul li {
+      width: 800px;
+      float: left;
+      font-size: 20px;
+    }
+    /* ul li:last-child{
+      margin-top: 20px;
+    } */
+    ul li span {
+      float: left;
+      width: 100px;
+      margin-left: 30px;
+    }
+    input {
+      float: left;
+      display: block;
+      height: 20px;
+      width: 20px;
+    }
+    .left {
+      text-align: center;
+      float: left;
+      display: block;
+      height: 20px;
+      width: 20px;
+      margin-left: 21px;
+    }
+    .num {
+      display: block;
+      border: 0;
+      float: left;
+      text-align: center;
+      outline: 0;
+    }
+    .right {
+      text-align: center;
+      margin-right: 49px;
+      display: block;
+      height: 20px;
+      width: 20px;
+      float: left;
+    }
+    .del {
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+    }
+    /* .last{
+      margin-left: 317px;
+    } */
+    div span {
+      float: left;
+      width: 100px;
+      margin-left: 30px;
+    }
+    .number-all {
+      margin-left: 57px;
+    }
+    .pay {
+      display: block;
+      background-color: hotpink;
+      text-align: center;
+      outline: 0;
+      border: 0;
+      color: #fff;
+      line-height: 30px;
+      cursor: pointer;
+    }
+    .number {
+      /* padding-left: 10px; */
+      box-sizing: border-box;
+    }
+  </style>
+  <body>
+    <ul class="list clearfix">
+      <li>
+        <input class="all" type="checkbox" />操作 <span>商品</span>
+        <span>单价</span> <span class="number">数量</span> <span>小计</span>
+      </li>
+      <!--
+        <li>
+          <input type="checkbox" /> <span>iphone</span> <span>2000</span>
+          <button>-</button> <input type="text" value="1" /> <button>+</button>
+          <span>2000</span>
+        </li>
+      -->
+    </ul>
+    <div>
+      <span>个数：</span> <span class="number-all">0</span> <span>总价：</span>
+      <span class="last">0</span> <button class="pay">结算</button>
+    </div>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script>
+      //
+
+      var goodsArr = [
+        { goodsName: 'iphone', price: 7000 },
+        { goodsName: 'food', price: 200 },
+        { goodsName: 'clothes', price: 2000 },
+        { goodsName: 'shoes', price: 5000 }
+      ]
+      // 生成页面上的购物车
+      // var goodArr = goodsArr.forEach(function (goodArr, index) {
+      //     var li = $('<li>')
+      //   $('.list').append(li)
+      //    var num1 = $('.ha').val()
+
+      //    li.html(`<input type="checkbox" /> <span>${goodArr.goodsName}</span> <span>${goodArr.price}</span>
+      //    <button class='left'>-</button> <input class='ha' type="text" value="4" /> <button class='right'>+</button>
+      //    <span class='rt'>${goodArr.price*num1}</span>`)
+      //   })
+      for (var i = 0; i < goodsArr.length; i++) {
+        var goodArr = goodsArr[i]
+        var li = $('<li>')
+
+        li.html(
+          `<input class='other' type="checkbox" /> <span>${
+            goodArr.goodsName
+          }</span> <span class='money' >${goodArr.price}</span>
+                          <button class='left' disabled>-</button> <input class='num' type="text" value="1" /> <button class='right'>+</button>
+                          <span class='price'>${
+                            goodArr.price
+                          }</span> <button class='del'>删除</button>`
+        ).addClass('goods')
+
+        $('.list').append(li)
+        $('.del').click(function() {
+          $(this)
+            .parent()
+            .remove()
+          $('.last').text(allMoney($('.list .goods')))
+        })
+      }
+
+      // var li2 = $('<li>')
+      //  li2.html(` <span class='last'>总价：</span><span>14200</span> <button class='pay'>结算</button>`)
+      //  $('.list').append(li2)
+      function allMoney(allGoods) {
+        var price = 0
+        allGoods.each(function() {
+          var state = $(this)
+            .find('.other')
+            .prop('checked')
+          if (state) {
+            price =
+              price +
+              $(this)
+                .find('.price')
+                .text() *
+                1
+          }
+        })
+        return price.toFixed(2)
+      }
+
+      $('.all').change(function() {
+        var state = $(this).prop('checked')
+
+        $('.other').prop('checked', state)
+        if (state) {
+          $('.number-all').text($('.list .goods').length)
+        } else {
+          $('.number-all').text(0)
+        }
+        $('.last').text(allMoney($('.list .goods')))
+      })
+
+      $('.other').change(function() {
+        var state = $(this).prop('checked')
+        var numberAll = $('.number-all').text() * 1
+        if (state === false) {
+          $('.all').prop('checked', state)
+          numberAll--
+          $('.number-all').text(numberAll)
+          $('.last').text(allMoney($('.list .goods')))
+        } else {
+          var otherState1 = 0
+          $('.other').each(function() {
+            var otherState2 = $(this).prop('checked')
+            if (otherState2) {
+              otherState1++
+            }
+            if (otherState1 === $('.other').length) {
+              $('.all').prop('checked', true)
+            }
+          })
+          numberAll++
+          $('.number-all').text(numberAll)
+          $('.last').text(allMoney($('.list .goods')))
+
+          // var otherState1 = true
+          // $('.other').each(function(){
+          //  var otherState2 = $(this).prop('checked')
+          //  if(otherState2===false){
+          //      otherState1 = false
+          //  }
+
+          // })
+          // $('.all').prop('checked', otherState1 )
+          // numberAll++
+          // $('.number-all').text(numberAll)
+        }
+      })
+
+      $('ul .goods .right').click(function(e) {
+        var num1 = $(this)
+          .parent('.goods')
+          .find('.num')
+          .val()
+        // console.log(num1)
+        num1 = parseInt(num1) + 1
+        if (num1 > 1) {
+          $(this)
+            .parent('.goods')
+            .find('.left')
+            .attr('disabled', false)
+        }
+        $(this)
+          .parent('.goods')
+          .find('.num')
+          .val(num1)
+        var num2 = $(this)
+          .parent('.goods')
+          .find('.money')
+          .text()
+
+        // var num2 = 7000*num1
+        $(this)
+          .parent('.goods')
+          .find('.price')
+          .text(num1 * num2)
+        $('.last').text(allMoney($('.list .goods')))
+      })
+      $('ul .goods .left').click(function(e) {
+        var num1 = $(this)
+          .parent('.goods')
+          .find('.num')
+          .val()
+
+        if (num1 > 1) {
+          num1 = parseInt(num1) - 1
+          $(this)
+            .parent('.goods')
+            .find('.num')
+            .val(num1)
+          var num2 = $(this)
+            .parent('.goods')
+            .find('.money')
+            .text()
+          $(this)
+            .parent('.goods')
+            .find('.price')
+            .text(num1 * num2)
+          $('.last').text(allMoney($('.list .goods')))
+        }
+        if (num1 === 1) {
+          $(this)
+            .parent('.goods')
+            .find('.left')
+            .attr('disabled', true)
+        }
+      })
+
+      //  $('ul li:eq(2) .right').click(function (e) {
+      //     var num1 = $('ul li:eq(2) .num').val()
+      //     num1 = parseInt(num1) + 1
+      //     $('ul li:eq(2) .num').val(num1)
+      //     var num2 = $('ul li:eq(2) .price').text()
+      //     $('ul li:eq(2) .price').text(200 * num1)
+      //   })
+      //   $('ul li:eq(2) .left').click(function (e) {
+      //     var num1 = $('ul li:eq(2) .num').val()
+      //     num1 = parseInt(num1) - 1
+      //     if (num1 < 1) {
+      //       num1 = 1
+      //       $('ul li:eq(2) .num').val(num1)
+      //       var num2 = $('ul li:eq(2) .price').text()
+      //       $('ul li:eq(2) .price').text(200 * num1)
+      //     } else {
+      //       $('ul li:eq(2) .num').val(num1)
+      //       var num2 = $('ul li:eq(2) .price').text()
+      //       $('ul li:eq(2) .price').text(200 * num1)
+      //     }
+      //   })
+
+      //    $('ul li:eq(3) .right').click(function (e) {
+      //       var num1 = $('ul li:eq(3) .num').val()
+      //       num1 = parseInt(num1) + 1
+      //       $('ul li:eq(3) .num').val(num1)
+      //       var num2 = $('ul li:eq(3) .price').text()
+      //       $('ul li:eq(3) .price').text(2000 * num1)
+      //     })
+      //     $('ul li:eq(3) .left').click(function (e) {
+      //       var num1 = $('ul li:eq(3) .num').val()
+      //       num1 = parseInt(num1) - 1
+      //       if (num1 < 1) {
+      //         num1 = 1
+      //         $('ul li:eq(3) .num').val(num1)
+      //         var num2 = $('ul li:eq(3) .price').text()
+      //         $('ul li:eq(3) .price').text(2000 * num1)
+      //       } else {
+      //         $('ul li:eq(3) .num').val(num1)
+      //         var num2 = $('ul li:eq(3) .price').text()
+      //         $('ul li:eq(3) .price').text(2000 * num1)
+      //       }
+      //     })
+
+      //      $('ul li:eq(4) .right').click(function (e) {
+      //         var num1 = $('ul li:eq(4) .num').val()
+      //         num1 = parseInt(num1) + 1
+      //         $('ul li:eq(4) .num').val(num1)
+      //         var num2 = $('ul li:eq(4) .price').text()
+      //         $('ul li:eq(4) .price').text(5000 * num1)
+      //       })
+      //       $('ul li:eq(4) .left').click(function (e) {
+      //         var num1 = $('ul li:eq(4) .num').val()
+      //         num1 = parseInt(num1) - 1
+      //         if (num1 < 1) {
+      //           num1 = 1
+      //           $('ul li:eq(4) .num').val(num1)
+      //           var num2 = $('ul li:eq(4) .price').text()
+      //           $('ul li:eq(4) .price').text(5000 * num1)
+      //         } else {
+      //           $('ul li:eq(4) .num').val(num1)
+      //           var num2 = $('ul li:eq(4) .price').text()
+      //           $('ul li:eq(4) .price').text(5000 * num1)
+      //         }
+      //       })
+    </script>
+  </body>
+</html>

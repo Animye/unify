@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+  </head>
+  <style>
+    body {
+      height: 4000px;
+    }
+    .box {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      display: flex;
+      background-color: pink;
+      justify-content: center;
+    }
+    .box input {
+      width: 300px;
+      height: 50px;
+    }
+    .search {
+      width: 100px;
+      position: fixed;
+      left: 0;
+      top: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+    .search a {
+      background-color: #ccc;
+      color: #fff;
+      margin-bottom: 6px;
+      width: 40px;
+      line-height: 20px;
+    }
+    .search a:hover {
+      background-color: red;
+    }
+    .back {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+    header {
+      width: 80%;
+      height: 400px;
+      margin: 0 auto;
+      background-color: #ccc;
+    }
+    section {
+      width: 60%;
+      margin: 0 auto;
+    }
+    section .pic {
+      width: 100%;
+      height: 400px;
+    }
+    .pic1 {
+      background-color: hotpink;
+    }
+    .pic2 {
+      background-color: brown;
+    }
+    .pic3 {
+      background-color: orange;
+    }
+    .pic4 {
+      background-color: #000;
+    }
+    .pic5 {
+      background-color: rgb(0, 255, 179);
+    }
+  </style>
+  <body>
+    <div class="box"><input type="text" /></div>
+    <div class="search">
+      <a data-num="0" href="javascript:;">京东超市</a>
+      <a data-num="1" href="javascript:;">京东超市</a>
+      <a data-num="2" href="javascript:;">京东超市</a>
+      <a data-num="3" href="javascript:;">京东超市</a>
+      <a data-num="4" href="javascript:;">京东超市</a>
+    </div>
+    <button class="back">返回</button>
+    <header></header>
+    <section>
+      <div class="pic pic1"></div>
+      <div class="pic pic2"></div>
+      <div class="pic pic3"></div>
+      <div class="pic pic4"></div>
+      <div class="pic pic5"></div>
+    </section>
+    <script>
+      document.querySelector('.back').onclick = function() {
+        document.documentElement.scrollTop = 0
+      }
+      window.onscroll = function() {
+        var juli = document.documentElement.scrollTop
+        if (juli > 200) {
+          document.querySelector('.back').style.display = 'flex'
+          document.querySelector('.search').style.display = 'flex'
+          document.querySelector('.box').style.display = 'flex'
+        } else {
+          document.querySelector('.back').style.display = 'none'
+          document.querySelector('.search').style.display = 'none'
+          document.querySelector('.box').style.display = 'none'
+        }
+      }
+      // 事件委托做法
+      document.querySelector('.search').onclick = function(event) {
+        var ele = event.target
+        var eleName = ele.tagName
+
+        if (eleName === 'A') {
+          var ind = ele.getAttribute('data-num')
+          var pic =
+            document
+              .querySelectorAll('section>.pic')
+              [ind].getBoundingClientRect().top - 50
+          var c = document.documentElement.scrollTop
+          var y = pic + c
+          document.documentElement.scrollTop = y
+        }
+      }
+      // for循环做法
+
+      // var a = document.querySelectorAll('.search a')
+      // for (var i = 0; i < a.length; i++) {
+      //   a[i].onclick = function() {
+      //     var ind = this.getAttribute('data-num')
+      //     var pic =
+      //       document
+      //         .querySelectorAll('section>.pic')
+      //         [ind].getBoundingClientRect().top - 50
+      //     var c = document.documentElement.scrollTop
+      //     var y = pic + c
+      //     document.documentElement.scrollTop = y
+      //   }
+      // }
+    </script>
+  </body>
+</html>

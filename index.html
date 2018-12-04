@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Unify</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="./css/footer.css">
+</head>
+<style>
+    .fuzhuang {
+    width: 1110px;
+    height: 442px;
+    padding-bottom: 105px;
+    margin-bottom: 100px;
+}
+
+   .fuzhuang .swiper-slide {
+    width: 263px;
+    position:relative;
+}
+   .fuzhuang .swiper-slide .arrival{
+  text-align: center;
+  width: 263px;
+  line-height: 32px;
+  position:absolute;
+  bottom:63px;
+  background-color: #3bb18f;
+  transition:all 0.5s;
+
+
+}
+   .fuzhuang .swiper-slide .sold{
+  text-align: center;
+  width: 263px;
+  line-height: 32px;
+  position:absolute;
+  bottom:63px;
+  background-color: #e64b3b;
+   color:#fff;
+   font-size: 10px;
+
+}
+   .fuzhuang .swiper-slide .arrival:hover{
+  background-color: #000;
+}
+   .fuzhuang .swiper-slide .arrival a{
+  color:#fff;
+  font-size: 10px;
+}
+   .fuzhuang .swiper-slide .shirt{
+  width: 40px;
+  line-height: 40px;
+  color:#fff;
+  font-size: 9px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #3bb18f;
+   position:absolute;
+  top:10px;
+  right:-10px;
+z-index: 2;
+}
+
+   .fuzhuang .swiper-slide img {
+    width: 100%;
+}
+
+   .fuzhuang .swiper-slide .price .money {
+    width: 97px;
+    float: left;
+    font-size: 12px;
+}
+
+   .fuzhuang .swiper-slide .price .money a {
+    display: block;
+    float: left;
+    width: 100%;
+    color: #999;
+}
+
+   .fuzhuang .swiper-slide .money a:first-child {
+    color: #000;
+}
+
+   .fuzhuang .swiper-slide .price .money a:first-child:hover {
+    color: #3bb18f;
+}
+
+   .fuzhuang .swiper-slide .price .money a:nth-child(2):hover {
+    text-decoration: underline;
+}
+
+   .fuzhuang .swiper-slide .price .money span {
+    display: block;
+    float: left;
+    width: 100%;
+    color: #000;
+    font-size: 17px;
+}
+
+   .fuzhuang .swiper-slide .price ul {
+    float: right;
+
+}
+
+   .fuzhuang .swiper-slide .price ul li {
+    float: left;
+}
+
+   .fuzhuang .swiper-slide .price ul li i {
+    color: #999;
+    cursor: pointer;
+}
+
+   .fuzhuang .swiper-slide .price ul li i:hover {
+    color: #3bb18f;
+}
+
+   .fuzhuang .swiper-slide .price ul li:last-child i {
+    margin-left: 18px;
+    margin-right: 7px;
+}
+
+   .fuzhuang .da {
+    left: 0;
+    margin-top: 229px;
+    text-align: center;
+    display: block;
+    width: 45px;
+    line-height: 45px;
+    font-size: 7px;
+    border: 0;
+    background-color: #eef1f8;
+    color: #999999;
+    outline: 0;
+    cursor: pointer;
+    background-image: none;
+}
+
+   .fuzhuang .da:hover {
+    background-color: #3bb18f;
+    color: #fff;
+}
+
+   .fuzhuang .xiao {
+    right: 0;
+    margin-top: 229px;
+    text-align: center;
+    display: block;
+    width: 45px;
+    line-height: 45px;
+    font-size: 7px;
+    border: 0;
+    background-color: #eef1f8;
+    color: #999999;
+    outline: 0;
+    cursor: pointer;
+    background-image: none;
+}
+
+   .fuzhuang .xiao:hover {
+    background-color: #3bb18f;
+    color: #fff;
+}
+
+   .fuzhuang .swiper-pagination-bullet {
+     background-color: #3bb18f; 
+     cursor: pointer;
+
+}
+
+
+
+
+ .zidong {
+      width: 100%;
+      height: 480px;
+    overflow: hidden;
+
+    }
+.zidong .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .zidong .swiper-slide img{
+        display: block;
+        width: 100%;
+    }
+     .zidong .zuo{
+         background-image: none;
+        color:#fff;
+        font-size: 50px;
+        font-weight: bolder;
+    } 
+     .zidong .you{
+         background-image: none;
+        color:#fff;
+        font-size: 50px;
+        font-weight: bolder;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="top">
+                <div class="top-inner clearfix">
+                    <div class="f">
+                        <a href="#"><i class="iconfont icon-facebook"></i> </a>
+                        <a href="#"><i class="iconfont icon-birdxiaoniao"></i></a>
+                        <a href="#"><i class="iconfont icon-tixing"></i></a>
+                        <a href="#"><i class="iconfont icon-tengxunweibo"></i></a>
+                        <a href="#"><i class="iconfont icon-guanbi"></i></a>
+                    </div>
+                    <p><img src="images/weixin_03.jpg" alt="" />8 800 1234 4321</p>
+                        <ul class='euro'>
+                            <li>
+                                <a href="#"><i class="iconfont icon-eur"></i>Euro</a>
+                                <ul class='e'>
+                                    <li><a href="#"><i class="iconfont icon-eur"></i>Euro</a></li>
+                                    <li><a href="#"><i class="iconfont icon-eur"></i>US Dollars</a></li>
+                                    <li><a href="#"><i class="iconfont icon-eur"></i>GBP</a></li>
+                                    <li><a href="#"><i class="iconfont icon-eur"></i>Yen</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><img src="images/guoqi1_18.jpg" alt="" />English</a>
+                                <ul class="eng">
+                                    <li><a href=""><img src="images/guoqi1_18.jpg" alt="" />English</a></li>
+                                    <li><a href=""><img src="images/guoqi1_18.jpg" alt="" />Spanish</a></li>
+                                    <li><a href=""><img src="images/guoqi1_18.jpg" alt="" />Russian</a></li>
+                                    <li><a href=""><img src="images/guoqi1_18.jpg" alt="" />German</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class='help'>
+                            <li><a href="#">Our Stores</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li>
+                                <a href="#">Account</a>
+                                <ul>
+                                    <li><a href="#">Login</a></li>
+                                    <li><a href="#">Signup</a></li>
+                                    <li><a href="#">Wishlist</a></li>
+                                    <li><a href="#">Your Orders</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="d">
+                        <a class="gouwudai" href="#">
+                          <i class="iconfont icon-5gouwudai"></i>
+                           <span class="yuan">4</span>
+
+                </a>
+        <div class="cart">
+          <h3>SHOPPING CART</h3>
+          <div class="shopping">
+          <div class="black clearfix">
+            <img src="images/img1_006.jpg" alt="" />
+            <div class="glass">
+              <a href="#">Black Glasses</a>
+              <span>1 x $22.00</span>
+            </div>
+            <p>X</p>
+              </div>
+              <div class="black clearfix">
+            <img src="images/img1_006.jpg" alt="" />
+            <div class="glass">
+              <a href="#">Black Glasses</a>
+              <span>1 x $22.00</span>
+            </div>
+            <p>X</p>
+              </div>
+              <div class="black clearfix">
+            <img src="images/img1_006.jpg" alt="" />
+            <div class="glass">
+              <a href="#">Black Glasses</a>
+              <span>1 x $22.00</span>
+            </div>
+            <p>X</p>
+              </div>
+              <div class="black clearfix">
+            <img src="images/img1_006.jpg" alt="" />
+            <div class="glass">
+              <a href="#">Black Glasses</a>
+              <span>1 x $22.00</span>
+            </div>
+            <p>X</p>
+              </div>
+              <div class="black clearfix">
+            <img src="images/img1_006.jpg" alt="" />
+            <div class="glass">
+              <a href="#">Black Glasses</a>
+              <span>1 x $22.00</span>
+            </div>
+            <p>X</p>
+              </div>
+          </div>
+          <div class="total clearfix">
+            <span>TOTAL</span>
+            <span>$433.00</span>
+          </div>
+          <a href="#">VIEW CART <i class="iconfont icon-gouwuche"></i></a>
+          <button>PROCEED TO CHECKOUT</button>
+        </div>
+
+                            <a class="sousuo" href="#"><i class="iconfont icon-sousuo"></i></a>
+                            <div class="go">
+                                <input placeholder="Search Here..." type="text">
+                                <button>go</button>
+                            </div>
+
+                        </div>
+                </div>
+            </div>
+            <div class="bottom clearfix">
+                <div class="bottom-inner clearfix">
+                    <h1>
+                <a href="#">
+                    <img src="images/logo-1.png" alt="" />
+                </a>
+                    </h1>
+                    <ul class="clearfix">
+                        <li>
+                            <a href="#">HOME</a>
+                            <ul class="home">
+                                <li><a href="#">Home Default</a></li>
+                                <li><a href="#">Home 2<span>new</span></a></li>
+                                <li><a href="#">Home 3<span>new</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                          <a href="#">PAGES</a>
+                        <ul class="home  ho">
+                            <li><a href="#">Grid Filter</a></li>
+                            <li><a href="#">List Filter</a></li>
+                            <li><a href="#">Left/Right Category</a></li>
+                            <li><a href="#">Single Product</a></li>
+                            <li><a href="#">Checkout</a></li>
+                            <li><a href="#">Account</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Signup <span>new</span></a></li>
+                            <li><a href="#">Help New<span>new</span></a></li>
+                            <li><a href="#">Help New<span>new</span></a></li>
+                            <li><a href="#">Help New<span>new</span></a></li>
+                        </ul>
+                        </li>
+                        <li>
+                        <a href="#">CATEGORIES</a>
+                        <div class="desk">
+          <div class="desk-left">
+            <div class="desk1">
+              <h3>HOME DECOR</h3>
+              <ul>
+                <li><a href="#">Wall Decor</a></li>
+                <li><a href="#">Pillows & Throws</a></li>
+                <li><a href="#">Window Treatments</a></li>
+                <li><a href="#">Mirrors</a></li>
+              </ul>
+              <h3>HOME DECOR</h3>
+              <ul>
+                <li><a href="#">Wall Decor</a></li>
+                <li><a href="#">Pillows & Throws</a></li>
+                <li><a href="#">Window Treatments</a></li>
+                <li><a href="#">Mirrors</a></li>
+              </ul>
+            </div>
+            <div class="desk1 desk2">
+              <h3>KITCHEN & TABLETOP</h3>
+              <ul>
+                <li><a href="#">Coffee & Tea</a></li>
+                <li><a href="#">Cooking & Baking</a></li>
+                <li><a href="#">Cutlery & Cutting</a></li>
+                <li><a href="#">Serving</a></li>
+                <li><a href="#">Food Storage</a></li>
+              </ul>
+              <h3>OFFICE</h3>
+              <ul>
+
+                <li><a href="#">Writing Instruments</a></li>
+                <li><a href="#">Bookcases</a></li>
+                <li><a href="#">Filing Cabinets</a></li>
+              </ul>
+            </div>
+            <div class="desk1 desk3">
+              <h3>MODERN LIGHTING</h3>
+              <ul>
+                <li><a href="#">Bridgers 59" Floor Lamp</a></li>
+                <li><a href="#">Miltiades 27" Table Lamp</a></li>
+              </ul>
+              <h3>COASTAL LIVING ROOM FURNITURE</h3>
+              <ul>
+                <li><a href="#">Washington Console Table</a></li>
+                <li><a href="#">Anfield Coffee Table</a></li>
+                <li><a href="#">Banbury 2 Drawer End Table</a></li>
+                <li><a href="#">Landsdowne 53" Tv Stand</a></li>
+                <li><a href="#">Sevan Swivel Barrel Chair</a></li>
+                <li><a href="#">Enfield Credenza</a></li>
+              </ul>
+            </div>
+
+          </div>
+        <div class="desk-right">
+          <img src="images/img1_003.jpg" alt="" />
+          <div class="modern">
+            <h3>Modern Lighting</h3>
+            <h4>Modern Lighting</h4>
+            <p>$156.00</p>
+            <button>ADD TO CART</button>
+          </div>
+        </div>
+        </div>
+                        </li>
+                        <li>
+                            <a href="#">WATCH</a>
+                            <div class="watch clearfix">
+                                <div class="watch-left">
+                                    <h3>WATCHES</h3>
+                                    <ul>
+                                        <li><a href="">Ladies' Parker Chronograph</a></li>
+                                        <li><a href="">Emporio Armani</a></li>
+                                        <li><a href="">Fossil Men's Grant Chronograph</a></li>
+                                        <li><a href="">Olivia Burton</a></li>
+                                        <li><a href="">Ladies' Big White Dial</a></li>
+                                        <li><a href="">Men's Grant Automatic</a></li>
+                                        <li><a href="">Ladies' The Roxy</a></li>
+                                        <li><a href="">Sport Watch</a></li>
+                                        <li><a href="">Burberry Ladies' The City</a></li>
+                                        <li><a href="">Tissot</a></li>
+                                    </ul>
+                                </div>
+                                <div class="watch-right">
+                                    <!-- <img src="images/watch.jpg" alt=""> -->
+                                    <h3>BESTSELLER</h3>
+                                    <h4>MVMTH Swiss Watch</h4>
+                                    <p>$273.00</p>
+                            
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">CATALOGUE</a>
+                            <div class="cata clearfix">
+                                <div class="logue">
+                                    <h3>CLOTHES</h3>
+                                    <ul>
+                                        <li><a href="">New in</a></li>
+                                        <li><a href="">Coats & Jackets</a></li>
+                                        <li><a href="">Jeans</a></li>
+                                        <li><a href="">Dresses</a></li>
+                                        <li><a href="">Shorts New</a></li>
+                                        <li><a href="">Skirts</a></li>
+                                        <li><a href="">T-Shirts</a></li>
+                                    </ul>
+                                    <h3>SHOES</h3>
+                                    <ul>
+                            
+                                        <li><a href="">Boots</a></li>
+                                        <li><a href="">FLats</a></li>
+                                        <li><a href="">Heels</a></li>
+                                        <li><a href="">Sandals</a></li>
+                                    </ul>
+                                </div>
+                            
+                                <div class="logue">
+                                    <h3>ACCESSORIES</h3>
+                                    <ul>
+                                        <li><a href="">All accessories</a></li>
+                                        <li><a href="">Bags & Purses</a></li>
+                                        <li><a href="">Scarvs & Hats</a></li>
+                                        <li><a href="">Dresses</a></li>
+                                        <li><a href="">Jewellery</a></li>
+                                        <li><a href="">Fragrance & Beauty</a></li>
+                                    </ul>
+                                    <h3>LINGERIE</h3>
+                                    <ul>
+                            
+                                        <li><a href="">Linger New</a></li>
+                                        <li><a href="">Slippers</a></li>
+                            
+                                    </ul>
+                                    <h3>NIGHTWEAR</h3>
+                                    <ul>
+                            
+                                        <li><a href="">Nightwear</a></li>
+                                        <li><a href="">Socks</a></li>
+                            
+                                    </ul>
+                                </div>
+                            
+                                <div class="logue">
+                                    <h3>MIXED</h3>
+                                    <ul>
+                                        <li><a href="">New in</a></li>
+                                        <li><a href="">Coats & Jackets</a></li>
+                                        <li><a href="">Jeans</a></li>
+                                        <li><a href="">Dresses</a></li>
+                                        <li><a href="">Shorts New</a></li>
+                                        <li><a href="">Skirts</a></li>
+                                        <li><a href="">T-Shirts</a></li>
+                                        <li><a href="">Boots</a></li>
+                                        <li><a href="">FLats</a></li>
+                                        <li><a href="">Heels</a></li>
+                                        <li><a href="">Sandals</a></li>
+                                        <li><a href="">Sports</a></li>
+                                        <li><a href="">Socks</a></li>
+                                        <li><a href="">Tights</a></li>
+                                    </ul>
+                                </div>
+                            
+                                <div class="logue">
+                                    <h3>ACCESSORIES</h3>
+                                    <ul>
+                                        <li><a href="">All accessories</a></li>
+                                        <li><a href="">Bags & Purses</a></li>
+                                        <li><a href="">Scarvs & Hats</a></li>
+                                        <li><a href="">Dresses</a></li>
+                                        <li><a href="">Jewellery</a></li>
+                                        <li><a href="">Fragrance & Beauty</a></li>
+                                    </ul>
+                                    <h3>LINGERIE</h3>
+                                    <ul>
+                            
+                                        <li><a href="">Linger New</a></li>
+                                        <li><a href="">Slippers</a></li>
+                            
+                                    </ul>
+                                    <h3>NIGHTWEAR</h3>
+                                    <ul>
+                            
+                                        <li><a href="">Nightwear</a></li>
+                                        <li><a href="">Socks</a></li>
+                            
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                        <a href="#">NEW ARRIVALS</a>
+                         <div class="shop-now clearfix">
+          <div class="now clearfix">
+
+            <img src="images/now1.jpg" alt="" />
+             <div class="yinying"></div>
+             <div class="han">
+                <h3>BLOUSE</h3>
+                <p>Lafayette</p>
+                <button>SHOP NOW</button>
+             </div>
+          </div>
+           <div class="now">
+
+            <img src="images/now2.jpg" alt="" />
+             <div class="yinying"></div>
+             <div class="han">
+                <h3>BLOUSE</h3>
+                <p>Lafayette</p>
+                <button>SHOP NOW</button>
+             </div>
+          </div>
+           <div class="now">
+
+            <img src="images/now3.jpg" alt="" />
+             <div class="yinying"></div>
+             <div class="han">
+                <h3>BLOUSE</h3>
+                <p>Lafayette</p>
+                <button>SHOP NOW</button>
+             </div>
+          </div>
+        </div>
+                        </li>
+                        <li><a href="#">MAIN</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div class="banner clearfix">
+                <div class="pic">
+                    <img class='love' src="images/slide-1.jpg" alt="" />
+                    <img src="images/slide-2.jpg" alt="" />
+                    <img src="images/slide-3.jpg" alt="" />
+                    <img src="images/slide-4.jpg" alt="" />
+                    <img src="images/slide-5.jpg" alt="" />
+                    <a class='l' href="#"><i class="iconfont icon-xiaoyuhao"></i></a>
+                    <a class='r' href="#"><i class="iconfont icon-dayuhao"></i></a>
+                </div>
+            </div> -->
+            <div class="swiper-container zidong">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img  src="images/slide-1.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="images/slide-2.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="images/slide-3.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="images/slide-4.jpg" alt="" /></div>
+                    <div class="swiper-slide"><img src="images/slide-5.jpg" alt="" /></div>
+                    
+                </div>
+                <!-- Add Pagination -->
+                <!-- <div class="swiper-pagination"></div> -->
+                <!-- Add Arrows -->
+                <div class="swiper-button-next zuo">〉</div>
+                <div class="swiper-button-prev you">〈</div>
+                </div>
+                
+               
+
+            <div class="content clearfix">
+                <ul>
+                    <li><a href=""><i class="iconfont icon-huoche"></i><span>FREE SHIPPING</span><span>In 2-3 Days</span></a></li>
+                    <li><a href=""><i class="iconfont icon-shoutuiche"></i><span>FREE RETURNS</span><span>No Questions Asked</span></a></li>
+                    <li><a href=""><i class="iconfont icon-24xiaoshiqiantai"></i><span>FREE 24</span><span>Days Storage</span></a></li>
+                </ul>
+            </div>
+        </header>
+        <section>
+            <div class="sex clearfix">
+                <a href="#">
+            <img src="images/img1_004.jpg" alt="" />
+            <div class="zi">
+                <p>Collections</p>
+                <span>Women</span>
+            </div>
+        </a>
+                <a href="#">
+            <img src="images/img2_002.jpg" alt="" />
+            <div class="zi">
+                <p>Collections</p>
+                <span>Children</span>
+            </div>
+        </a>
+                <a href="#">
+            <img src="images/img3_005.jpg" alt="" />
+            <div class="zi">
+                <p>Collections</p>
+                <span>Men</span>
+            </div>
+        </a>
+            </div>
+            <div class="products clearfix">
+                <div class="text">
+                    <h3>Featured Products</h3>
+                    <p>We want to create a range of beautiful, practical and modern outerwear that </p>
+                    <p>doesn't cost the earth – but let's you still live life in style.</p>
+                </div>
+            </div>
+            <!-- </div> -->
+            <!--  <div class="shop clearfix">
+            <button><</button>
+            <button>></button>
+               <ul>
+                   <li><span></span></li>
+                   <li><span></span></li>
+                   <li><span></span></li>
+                   <li><span></span></li>
+                   <li><span></span></li>
+                   <li><span></span></li>
+                   <li><span></span></li>
+                   <li><span></span></li>
+               </ul>
+            <div class="clothes clearfix">
+               <img src="images/img1.jpg" alt="" />
+               <div class="price clearfix">
+                   <div class="money clearfix">
+                       <a href="">Summer shorts</a>
+                       <a href="">Man</a>
+                       <span>$52.00</span>
+                   </div>
+                   <ul>
+                       <li><i class="iconfont icon-gouwuche"></i></li>
+                       <li><i class="iconfont icon-xin"></i></li>
+                   </ul>
+               </div>
+
+            </div>
+            <div class="clothes clearfix">
+               <img src="images/img1.jpg" alt="" />
+               <div class="price clearfix">
+                   <div class="money clearfix">
+                       <a href="">Summer shorts</a>
+                       <a href="">Man</a>
+                       <span>$52.00</span>
+                   </div>
+                   <ul>
+                       <li><i class="iconfont icon-gouwuche"></i></li>
+                       <li><i class="iconfont icon-xin"></i></li>
+                   </ul>
+               </div>
+            </div>
+            <div class="clothes clearfix">
+               <img src="images/img1.jpg" alt="" />
+               <div class="price clearfix">
+                   <div class="money clearfix">
+                       <a href="">Summer shorts</a>
+                       <a href="">Man</a>
+                       <span>$52.00</span>
+                   </div>
+                   <ul>
+                       <li><i class="iconfont icon-gouwuche"></i></li>
+                       <li><i class="iconfont icon-xin"></i></li>
+                   </ul>
+               </div>
+            </div>
+            <div class="clothes clearfix">
+               <img src="images/img1.jpg" alt="" />
+               <div class="price clearfix">
+                   <div class="money clearfix">
+                       <a href="">Summer shorts</a>
+                       <a href="">Man</a>
+                       <span>$52.00</span>
+                   </div>
+                   <ul>
+                       <li><i class="iconfont icon-gouwuche"></i></li>
+                       <li><i class="iconfont icon-xin"></i></li>
+                   </ul>
+               </div>
+            </div> -->
+            <div class="swiper-container fuzhuang">
+                <div class="swiper-wrapper ">
+                    <div class="swiper-slide">
+                        <img src="images/img1.jpg" alt="" />
+                        <div class="price clearfix">
+                            <div class="money clearfix">
+                                <a href="">Summer shorts</a>
+                                <a href="">Man</a>
+                                <span>$52.00</span>
+                            </div>
+                            <ul>
+                                <li><i class="iconfont icon-gouwuche"></i></li>
+                                <li><i class="iconfont icon-xin"></i></li>
+                            </ul>
+                        </div>
+                        <div class="arrival">
+                          <a href="">NEW ARRIVAL</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/img22.jpg" alt="" />
+                        <div class="price clearfix">
+                            <div class="money clearfix">
+                                <a href="">Summer shorts</a>
+                                <a href="">Man</a>
+                                <span>$52.00</span>
+                            </div>
+                            <ul>
+                                <li><i class="iconfont icon-gouwuche"></i></li>
+                                <li><i class="iconfont icon-xin"></i></li>
+                            </ul>
+                        </div>
+                        <div class="shirt">-40%</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/img3.jpg" alt="" />
+                        <div class="price clearfix">
+                            <div class="money clearfix">
+                                <a href="">Summer shorts</a>
+                                <a href="">Man</a>
+                                <span>$52.00</span>
+                            </div>
+                            <ul>
+                                <li><i class="iconfont icon-gouwuche"></i></li>
+                                <li><i class="iconfont icon-xin"></i></li>
+                            </ul>
+                        </div>
+                        <div class="sold">SOLD OUT</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/img4.jpg" alt="" />
+                        <div class="price clearfix">
+                            <div class="money clearfix">
+                                <a href="">Summer shorts</a>
+                                <a href="">Man</a>
+                                <span>$52.00</span>
+                            </div>
+                            <ul>
+                                <li><i class="iconfont icon-gouwuche"></i></li>
+                                <li><i class="iconfont icon-xin"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/img5.jpg" alt="" />
+                        <div class="price clearfix">
+                            <div class="money clearfix">
+                                <a href="">Summer shorts</a>
+                                <a href="">Man</a>
+                                <span>$52.00</span>
+                            </div>
+                            <ul>
+                                <li><i class="iconfont icon-gouwuche"></i></li>
+                                <li><i class="iconfont icon-xin"></i></li>
+                            </ul>
+                        </div>
+                        <div class="sold">SOLD OUT</div>
+                    </div>
+                    <div class="swiper-slide"><img src="images/img6.jpg" alt="" />
+                        <div class="price clearfix">
+                            <div class="money clearfix">
+                                <a href="">Summer shorts</a>
+                                <a href="">Man</a>
+                                <span>$52.00</span>
+                            </div>
+                            <ul>
+                                <li><i class="iconfont icon-gouwuche"></i></li>
+                                <li><i class="iconfont icon-xin"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/img7.jpg" alt="" />
+                        <div class="price clearfix">
+                            <div class="money clearfix">
+                                <a href="">Summer shorts</a>
+                                <a href="">Man</a>
+                                <span>$52.00</span>
+                            </div>
+                            <ul>
+                                <li><i class="iconfont icon-gouwuche"></i></li>
+                                <li><i class="iconfont icon-xin"></i></li>
+                            </ul>
+                        </div>
+                        <div class="arrival">
+                          <a href="">NEW ARRIVAL</a>
+                        </div>
+                        <div class="shirt">-40%</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/img8.jpg" alt="" />
+                        <div class="price clearfix">
+                            <div class="money clearfix">
+                                <a href="">Summer shorts</a>
+                                <a href="">Man</a>
+                                <span>$52.00</span>
+                            </div>
+                            <ul>
+                                <li><i class="iconfont icon-gouwuche"></i></li>
+                                <li><i class="iconfont icon-xin"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev da"><</div>
+                <div class="swiper-button-next xiao"> ></div>
+               
+                <!-- 如果需要导航按钮 -->
+                <!-- 如果需要滚动条 -->
+                <!--  <div class="swiper-scrollbar"></div> -->
+            </div>
+            <div class="gloves clearfix">
+                <div class="leather">
+                    <div class="leather-left">
+                        <h2>Leather</h2>
+                        <h3>Gloves</h3>
+                        <p>We want to create a range of beautiful, practical and modern outerwear that doesn't cost the earth.</p>
+                        <a href="#">SHOP NOW</a>
+                        <ul>
+                            <li>00 <span>DAYS</span></li>
+                            <em>：</em>
+                            <li>00 <span>HOURS</span></li>
+                            <em>：</em>
+                            <li>00 <span>MINUTES</span></li>
+                            <em>：</em>
+                            <li>00 <span>SECONDS</span></li>
+                        </ul>
+                    </div>
+                    <div class="leather-right">
+                        <img src="images/img1.png" alt="" />
+                        <span>$60 <em>.00</em></span>
+                    </div>
+                </div>
+            </div>
+            <div class="products clearfix">
+                <div class="text">
+                    <h3>New Arrivals</h3>
+                    <p>We want to create a range of beautiful, practical and modern outerwear that </p>
+                    <p>doesn't cost the earth – but let's you still live life in style.</p>
+                </div>
+            </div>
+            <div class="new">
+                <article class='clearfix'>
+                    <img src="images/img1_005.jpg" alt="" />
+                    <div class="price clearfix">
+                        <div class="money clearfix">
+                            <a href="">Glasses</a>
+                            <a href="">Accessories</a>
+                            <span>$22.00</span>
+                        </div>
+                        <ul>
+                            <li><i class="iconfont icon-gouwuche"></i></li>
+                            <em></em>
+                            <li><i class="iconfont icon-xin"></i></li>
+                        </ul>
+                    </div>
+                </article>
+                <article class='clearfix'>
+                    <img src="images/img1_005.jpg" alt="" />
+                    <div class="price clearfix">
+                        <div class="money clearfix">
+                            <a href="">Glasses</a>
+                            <a href="">Accessories</a>
+                            <span>$22.00</span>
+                        </div>
+                        <ul>
+                            <li><i class="iconfont icon-gouwuche"></i></li>
+                            <em></em>
+                            <li><i class="iconfont icon-xin"></i></li>
+                        </ul>
+                    </div>
+                </article>
+                <article class='clearfix'>
+                    <img src="images/img1_005.jpg" alt="" />
+                    <div class="price clearfix">
+                        <div class="money clearfix">
+                            <a href="">Glasses</a>
+                            <a href="">Accessories</a>
+                            <span>$22.00</span>
+                        </div>
+                        <ul>
+                            <li><i class="iconfont icon-gouwuche"></i></li>
+                            <em></em>
+                            <li><i class="iconfont icon-xin"></i></li>
+                        </ul>
+                    </div>
+                </article>
+                <article class='clearfix'>
+                    <img src="images/img1_005.jpg" alt="" />
+                    <div class="price clearfix">
+                        <div class="money clearfix">
+                            <a href="">Glasses</a>
+                            <a href="">Accessories</a>
+                            <span>$22.00</span>
+                        </div>
+                        <ul>
+                            <li><i class="iconfont icon-gouwuche"></i></li>
+                            <em></em>
+                            <li><i class="iconfont icon-xin"></i></li>
+                        </ul>
+                    </div>
+                </article>
+                <article class='clearfix'>
+                    <img src="images/img1_005.jpg" alt="" />
+                    <div class="price clearfix">
+                        <div class="money clearfix">
+                            <a href="">Glasses</a>
+                            <a href="">Accessories</a>
+                            <span>$22.00</span>
+                        </div>
+                        <ul>
+                            <li><i class="iconfont icon-gouwuche"></i></li>
+                            <em></em>
+                            <li><i class="iconfont icon-xin"></i></li>
+                        </ul>
+                    </div>
+                </article>
+                <article class='clearfix'>
+                    <img src="images/img1_005.jpg" alt="" />
+                    <div class="price clearfix">
+                        <div class="money clearfix">
+                            <a href="">Glasses</a>
+                            <a href="">Accessories</a>
+                            <span>$22.00</span>
+                        </div>
+                        <ul>
+                            <li><i class="iconfont icon-gouwuche"></i></li>
+                            <em></em>
+                            <li><i class="iconfont icon-xin"></i></li>
+                        </ul>
+                    </div>
+                </article>
+                <article class='clearfix'>
+                    <img src="images/img1_005.jpg" alt="" />
+                    <div class="price clearfix">
+                        <div class="money clearfix">
+                            <a href="">Glasses</a>
+                            <a href="">Accessories</a>
+                            <span>$22.00</span>
+                        </div>
+                        <ul>
+                            <li><i class="iconfont icon-gouwuche"></i></li>
+                            <em></em>
+                            <li><i class="iconfont icon-xin"></i></li>
+                        </ul>
+                    </div>
+                </article>
+                <article class='clearfix'>
+                    <img src="images/img1_005.jpg" alt="" />
+                    <div class="price clearfix">
+                        <div class="money clearfix">
+                            <a href="">Glasses</a>
+                            <a href="">Accessories</a>
+                            <span>$22.00</span>
+                        </div>
+                        <ul>
+                            <li><i class="iconfont icon-gouwuche"></i></li>
+                            <em></em>
+                            <li><i class="iconfont icon-xin"></i></li>
+                        </ul>
+                    </div>
+                </article>
+                <article class='clearfix'>
+                    <img src="images/img1_005.jpg" alt="" />
+                    <div class="price clearfix">
+                        <div class="money clearfix">
+                            <a href="">Glasses</a>
+                            <a href="">Accessories</a>
+                            <span>$22.00</span>
+                        </div>
+                        <ul>
+                            <li><i class="iconfont icon-gouwuche"></i></li>
+                            <em></em>
+                            <li><i class="iconfont icon-xin"></i></li>
+                        </ul>
+                    </div>
+                </article>
+                <a href="#">All New Arrivals</a>
+            </div>
+            <div class="summer clearfix">
+                <a class='coll' href="#">
+           <div class="woman clearfix">
+           <h3>SUMMER</h3>
+               <p> COLLECTION</p>
+               <span>Shop Now</span>
+           </div>
+       </a>
+                <a class='shoes' href="#">
+           <img src="images/imgsss.png" alt="" />
+           <h3>Sneaker Shoes for Man</h3>
+           <p>$45.00</p>
+       </a>
+            </div>
+            <div class="products clearfix">
+                <div class="text">
+                    <h3>Blog News</h3>
+                    <p>Keep in touch with the latest blogs & news. </p>
+                </div>
+            </div>
+            <div class="blog clearfix">
+                <div class="sport">
+                    <img src="images/img1_002.jpg" alt="" />
+                    <div class="cover"></div>
+                    <div class="text">
+                        <h3>sport</h3>
+                        <a href="#">24 Hours in Shopping</a>
+                        <p>By,<a href="#">DAN SHAW</a>· MAY 31, 2017</p>
+                        <a href="#">READ MORE</a>
+                    </div>
+                </div>
+                <div class="sport">
+                    <img src="images/img2_005.jpg" alt="" />
+                    <div class="cover"></div>
+                    <div class="text">
+                        <h3>sport</h3>
+                        <a href="#">24 Hours in Shopping</a>
+                        <p>By,<a href="#">DAN SHAW</a>· MAY 31, 2017</p>
+                        <a href="#">READ MORE</a>
+                    </div>
+                </div>
+                <div class="sport">
+                    <img src="images/img3_002.jpg" alt="" />
+                    <div class="cover"></div>
+                    <div class="text">
+                        <h3>sport</h3>
+                        <a href="#">24 Hours in Shopping</a>
+                        <p>By,<a href="#">DAN SHAW</a>· MAY 31, 2017</p>
+                        <a href="#">READ MORE</a>
+                    </div>
+        </section>
+        <footer>
+            <div class="footer-top">
+                <div class="f-t-i">
+                    <div class="f-i-t clearfix">
+                        <div class="f-t-l clearfix">
+                            <h3>Products</h3>
+                            <div class="pro clearfix">
+                                <ul>
+                                    <li><a href="#">SmartPhone</a></li>
+                                    <li><a href="#">Laptop</a></li>
+                                    <li><a href="#">Mouse</a></li>
+                                    <li><a href="#">Monitor</a></li>
+                                    <li><a href="#">Watch</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Tablet</a></li>
+                                    <li><a href="#">Accessorie</a></li>
+                                    <li><a href="#">Mouses Pad</a></li>
+                                    <li><a href="#">Handset</a></li>
+                                    <li><a href="#">Phablet</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Speakers</a></li>
+                                    <li><a href="#">Camera</a></li>
+                                    <li><a href="#">Play Station</a></li>
+                                    <li><a href="#">Xbox</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="f-t-m clearfix">
+                            <h3>Brands</h3>
+                            <div class="bra clearfix">
+                                <ul>
+                                    <li><a href="#">Logitech</a></li>
+                                    <li><a href="#">Samsung</a></li>
+                                    <li><a href="#">Microsoft</a></li>
+                                    <li><a href="#">Apple</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="#">Huawei</a></li>
+                                    <li><a href="#">Motorola</a></li>
+                                    <li><a href="#">Sony</a></li>
+                                    <li><a href="#">Nokia</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="f-t-r">
+                            <h3>Contacts</h3>
+                            <div class="con clearfix">
+                                <ul>
+                                    <li class="clearfix">
+                                        <i class="iconfont icon-gouwuche"></i>
+                                        <span>Unit 25 Suite 3, 925 Prospect PI New York Avenue</span>
+                                    </li>
+                                    <li class="clearfix">
+                                        <i class="iconfont icon-gouwuche"></i>
+                                        <span>htmlstream@support.com</span>
+                                    <li class="clearfix">
+                                    <li>
+                                        <i class="iconfont icon-gouwuche"></i>
+                                        <span>+32 333 444 555</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="f-i-b clearfix">
+                        <div class="f-b-l">
+                            <h3>Subscribe</h3>
+                            <input type="text" placeholder="Enter your email" />
+                            <button>></button>
+                        </div>
+                        <div class="f-b-m">
+                            <h3>Language/Currency:</h3>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="images/guoqi1_18.jpg" alt="" />English</a>
+                                    <ul class="eng">
+                                        <li><a href=""><img src="images/guoqi1_18.jpg" alt="" />English</a></li>
+                                        <li><a href=""><img src="images/guoqi1_18.jpg" alt="" />Spanish</a></li>
+                                        <li><a href=""><img src="images/guoqi1_18.jpg" alt="" />Russian</a></li>
+                                        <li><a href=""><img src="images/guoqi1_18.jpg" alt="" />German</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);"><i class="iconfont icon-eur"></i>Euro</a>
+                                    <ul class='e'>
+                                        <li><a href="#"><i class="iconfont icon-eur"></i>Euro</a></li>
+                                        <li><a href="#"><i class="iconfont icon-eur"></i>US Dollars</a></li>
+                                        <li><a href="#"><i class="iconfont icon-eur"></i>GBP</a></li>
+                                        <li><a href="#"><i class="iconfont icon-eur"></i>Yen</a></li>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="f-b-r">
+                            <h3>Follow Us On:</h3>
+                            <ul class='clearfix'>
+                                <li>
+                                    <a href="#">
+                          <i class="iconfont icon-facebook"></i>
+                           <i class="iconfont icon-facebook"></i>
+                           </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                              <i class="iconfont icon-birdxiaoniao"></i>
+                              <i class="iconfont icon-birdxiaoniao"></i>
+                            </a>
+                                </li>
+                                <li><a href="#">
+                                <i class="iconfont icon-tixing"></i>
+                                <i class="iconfont icon-tixing"></i></a></li>
+                                <li><a href="#">
+                                <i class="iconfont icon-tengxunweibo"></i>
+
+                              <i class="iconfont icon-tengxunweibo"></i>
+                              </a></li>
+                                <li><a href="#"><i class="iconfont icon-guanbi"></i><i class="iconfont icon-guanbi"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="f-b-i clearfix">
+                    <div class="f-i-l">
+                        <p>2018 © Htmlstream. All Rights Reserved.</p>
+                    </div>
+                    <div class="f-i-r">
+                        <ul class="clearfix">
+                            <li><a href="#"><i class="iconfont icon-cc-visa"></i></a></li>
+                            <li><a href="#"><i class="iconfont icon-ccjcb"></i></a></li>
+                            <li><a href="#"><i class="iconfont icon-cc-visa"></i></a></li>
+                            <li><a href="#"><i class="iconfont icon-ccjcb"></i></a></li>
+                            <li><a href="#"><i class="iconfont icon-cc-visa"></i></a></li>
+                            <li><a href="#"><i class="iconfont icon-ccjcb"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="fanhui">
+            <a href="javascript:;">∧</a>
+        </div>
+        
+        
+        
+
+
+        <script src="js/swiper.min.js"></script>
+        <script src="js/jquery-3.3.1.js"></script>
+        <script src="js/index.js"></script>
+        <script>
+        var mySwiper = new Swiper('.fuzhuang', {
+            // direction: 'vertical', // 垂直切换选项
+            loop: true, // 循环模式选项
+            slidesPerGroup: 1,
+            slidesPerView: 4,
+            slidesPerView: 4,
+            spaceBetween: 20,
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+
+            },
+
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // 如果需要滚动条
+            // scrollbar: {
+            //   el: '.swiper-scrollbar',
+            // },
+        })
+         var swiper = new Swiper('.zidong', {
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                // pagination: {
+                //     el: '.swiper-pagination',
+                //     clickable: true,
+                // },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        </script>
+        
+</body>
+
+</html>

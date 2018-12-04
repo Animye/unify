@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+  <script>
+    var box = document.querySelector('.box')
+    function addClass(show, novel) {
+      var showClass = show.className
+      if (showClass !== '') {
+        showClass = showClass + ' '
+      } else {
+        showClass = showClass + ''
+      }
+      var last = showClass + novel
+      show.className = last
+    }
+    addClass(box, 'xxxx fffff')
+    function removeClass(show, novel) {
+      var showClass = ' ' + show.className + ' '
+      var re1 = /(\s+)/gi
+      showClass = showClass.replace(re1, ' ')
+      var removed = showClass.replace(' ' + novel + ' ', ' ')
+      var re2 = /(^\s+)|(\s+$)/g
+      removed = removed.replace(re2, '')
+      show.className = removed
+    }
+    removeClass(box, 'xxxx')
+  </script>
+</html>

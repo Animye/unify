@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        border-radius: 50%;
+        margin-left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <button class="btn">按钮</button>
+    <script>
+      // function animate(ele, styleObj) {
+      //   var styleName = Object.keys(styleObj)[0]
+      //   var targetValue = styleObj[styleName]
+      //   var startValue = parseFloat(
+      //     window.getComputedStyle(ele, null)[styleName]
+      //   )
+      //   var fun = setInterval(function() {
+      //     if (startValue > targetValue) {
+      //       startValue--
+      //     } else if (startValue < targetValue) {
+      //       startValue++
+      //     } else {
+      //       clearInterval(fun)
+      //     }
+      //     ele.style[styleName] = startValue + 'px'
+      //   }, 10)
+      // }
+      // document.querySelector('.btn').onclick = function() {
+      //   animate(document.querySelector('.box'), { width: 500 })
+      // }
+
+      // requestAnimationFrame(函数)方法代替setInterval或 clearInterval方法
+      function animate(ele, styleObj, callback) {
+        var styleName = Object.keys(styleObj)[0]
+        var targetValue = styleObj[styleName]
+        var startValue = parseFloat(
+          window.getComputedStyle(ele, null)[styleName]
+        )
+        function fun() {
+          if (startValue > targetValue) {
+            startValue--
+          } else if (startValue < targetValue) {
+            startValue++
+          }
+          ele.style[styleName] = startValue + 'px'
+          if (startValue !== targetValue) {
+            requestAnimationFrame(fun)
+          } else {
+            if (callback) {
+              callback()
+            }
+          }
+        }
+        fun()
+      }
+      document.querySelector('.btn').onclick = function() {
+        animate(document.querySelector('.box'), { width: 300 }, function() {
+          animate(document.querySelector('.box'), { width: 50 })
+        })
+      }
+
+      var a = 10
+      function fun() {
+        a++
+        // console.log(a)
+        if (a < 100) {
+          requestAnimationFrame(fun)
+        }
+      }
+      fun()
+
+      // function num(y) {
+      //   x += 5
+      //   y += 6
+      //   console.log(x + y)
+      // }
+      // num(9)
+      // var x = 2
+      // var y = 2
+
+      // (function() {
+      //   var a = 10
+      // })()
+
+      // 类数组
+      // var obj = {
+      //   '0': 'xa',
+      //   '1': 'xggga',
+      //   index: 1,
+      //   length: 2
+      // }
+      // console.log(Array.from(obj))
+
+      // arguments的使用
+      function fun1() {
+        console.log(Array.from(arguments))
+        console.log(Array.prototype.slice.call(arguments))
+
+        var num = 0
+        for (var i = 0; i < arguments.length; i++) {
+          num = num + arguments[i]
+        }
+        console.log(num)
+      }
+      fun1(1, 1, 2, 3, 4, 5, 6, 7, 1)
+
+      var x = 2
+      var y = 3
+      function hun(x) {
+        return x + 1
+      }
+      console.log(hun(y))
+      var hh = function(x) {
+        return x * x
+      }
+      console.log(hh(y))
+      console.log(hh(hun(y)))
+    </script>
+  </body>
+</html>

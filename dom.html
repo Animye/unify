@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+  </head>
+  <style>
+  .box{
+    width: 400px;
+    height: 400px;
+    background-color: pink;
+  }
+  </style>
+  <body>
+    <div class="box"></div>
+    <button class="btn" ">点击</button>
+    <!-- <button class="btn" ">点击</button>
+    <button class="btn" ">点击</button>
+    <button class="btn" ">点击</button>
+    <button class="btn" ">点击</button> -->
+    <a href="javascript:fun()">44444444444</a>
+    <script>
+      // var fun = function() {
+      //   console.log('1')
+      // }
+      // // document.querySelector('.btn').onclick = fun
+      // var f = document.querySelectorAll('.btn')
+      // for (var i = 0; i < f.length; i++) {
+      //  f[i].onclick = fun
+        
+      // }
+      // document.querySelectorAll('.btn')[0].onclick = fun
+
+      var color = function () {
+          var change = document.querySelector('.box').style
+          change.backgroundColor = "#ccc"
+        }
+    document.querySelector('.btn').onclick =color
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+  </head>
+  <style>
+    body {
+      background-color: #ccc;
+    }
+    form {
+      margin: 0 auto;
+      background-color: #fff;
+      width: 1000px;
+      font-size: 18px;
+      padding-top: 20px;
+      padding-bottom: 60px;
+    }
+    .box {
+      margin-bottom: 20px;
+    }
+    .box > label {
+      width: 340px;
+      text-align: right;
+      float: left;
+      line-height: 46px;
+    }
+    .box input[type='text'],
+    input[type='password'] {
+      float: left;
+      width: 322px;
+      line-height: 44px;
+      outline: 0;
+      border: 1px solid #ccc;
+      text-indent: 18px;
+    }
+    .box input[type='text']:focus {
+      border: 1px solid pink;
+    }
+    .box input[type='password']:focus {
+      border: 1px solid pink;
+    }
+    .submit {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      background-color: #ca5252;
+      color: #fff;
+      line-height: 44px;
+      width: 340px;
+      border: 0;
+      cursor: pointer;
+    }
+    form .box p {
+      font-size: 14px;
+      line-height: 46px;
+      text-indent: 15px;
+    }
+    .email {
+      margin-top: 50px;
+    }
+  </style>
+  <body>
+    <form action="">
+      <button class="submit">普通账号注册</button>
+      <div class="email box clearfix">
+        <label for="email">账号：</label>
+        <input
+          class="sign"
+          type="text"
+          name=""
+          id="email"
+          placeholder="6-18位字母数字组合"
+        />
+        <p class="tips"></p>
+      </div>
+      <div class="emails box clearfix">
+        <label for="emails">密码：</label>
+        <input
+          type="password"
+          class="pw"
+          id="emails"
+          placeholder="6-18位母密码 区分大小写"
+        />
+        <p class="tips2"></p>
+      </div>
+      <div class="email4 box clearfix">
+        <label for="email4">确认密码：</label>
+        <input
+          class="again"
+          type="password"
+          name=""
+          id="email4"
+          placeholder="再次输入密码"
+        />
+        <p class="tips"></p>
+      </div>
+      <div class="email3 box clearfix">
+        <label for="email3">手机号：</label>
+        <input
+          class="phone"
+          type="text"
+          name=""
+          id="email3"
+          placeholder="11位手机号"
+          readonly="readonly"
+        />
+        <p class="tips"></p>
+      </div>
+
+      <button class="submit">注册</button>
+    </form>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script>
+      var right = ''
+      var currentEmail = ''
+      var emailRe = /^([a-zA-Z])/
+      var emailRe2 = /\W/
+      var emailRe3 = /\s/
+      var emailRe4 = /^[0-9]{0-9}$/
+      var emailRe5 = /^1234567890$/
+      var emailRe6 = /^0123456789$/
+      var emailRe7 = /^(.)\1+$/
+      var emailRe8 = /^(134|135|136|137|138|139|147|150|151|152|157|158|159|172|178|182|183|184|187|188|198|130|131|132|145|155|156|166|171|175|176|185|186|166|133|149|153|173|177|180|181|189|199)[0-9]{8}$/
+      $('.sign').blur(function() {
+        var text = $(this)
+          .val()
+          .trim()
+        var result = emailRe.test(text)
+        var result2 = emailRe2.test(text)
+        var len = text.length
+
+        if (text === '') {
+          $(this)
+            .siblings('p')
+            .text('')
+        } else {
+          if (!result) {
+            $(this)
+              .siblings('p')
+              .text('请以字母开头')
+              .css('color', 'red')
+          } else {
+            if (len < 6 || len > 18) {
+              $(this)
+                .siblings('p')
+                .text('账号需由6-18个字符组成')
+                .css('color', 'red')
+            } else {
+              if (result2) {
+                $(this)
+                  .siblings('p')
+                  .text('账号字母|数字或下划线命名')
+                  .css('color', 'red')
+              } else {
+                $(this)
+                  .siblings('p')
+                  .text('√')
+                  .css('color', 'green')
+                currentEmail = $('.sign').val()
+                if (right !== '') {
+                  $('.phone').removeAttr('readOnly')
+                }
+              }
+            }
+          }
+        }
+      })
+      $('.sign').keyup(function(event) {
+        var code = event.which
+        text = $(this).val()
+        if (text === '') {
+          $(this)
+            .siblings('p')
+            .text('')
+        }
+      })
+      $('.pw').blur(function() {
+        var text = $(this).val()
+        var len = text.length
+        var result3 = emailRe3.test(text)
+        var result4 = emailRe4.test(text)
+        var result5 = emailRe5.test(text)
+        var result6 = emailRe6.test(text)
+        var result7 = emailRe7.test(text)
+        if (text === '') {
+          $(this)
+            .siblings('p')
+            .text('')
+        } else {
+          if (len < 6 || len > 16) {
+            $(this)
+              .siblings('p')
+              .text('位数不够 密码需由6-16个字符组成')
+              .css('color', 'red')
+          } else {
+            if (result3) {
+              $(this)
+                .siblings('p')
+                .text('密码不符合规范')
+                .css('color', 'red')
+            } else {
+              if (result4 || len < 9 || result5 || result6 || result7) {
+                $(this)
+                  .siblings('p')
+                  .text('密码过于简单')
+                  .css('color', 'red')
+              } else {
+                $(this)
+                  .siblings('p')
+                  .text('√')
+                  .css('color', 'green')
+                right = $('.pw').val
+
+                //   pw = val
+                //   if(pw && zh)
+                if (currentEmail !== '') {
+                  $('.phone').removeAttr('readOnly')
+                }
+              }
+            }
+          }
+        }
+      })
+      $('.pw').keyup(function(event) {
+        var code = event.which
+        text = $(this).val()
+        if (text === '') {
+          $(this)
+            .siblings('p')
+            .text('')
+        }
+      })
+      $('.again').blur(function() {
+        var first = $('.pw').val()
+        console.log(first)
+        var second = $('.again').val()
+        if (second === '') {
+          $(this)
+            .siblings('p')
+            .text('')
+        }
+        if (right === '') {
+          $('.emails>p')
+            .text('请先正确输入密码，再进行密码验证')
+            .css('color', 'red')
+        } else {
+          if (first !== second) {
+            $(this)
+              .siblings('p')
+              .text('密码不一致')
+              .css('color', 'red')
+          } else {
+            $(this)
+              .siblings('p')
+              .text('√')
+              .css('color', 'green')
+          }
+        }
+      })
+      $('.again').keyup(function(event) {
+        var code = event.which
+        text = $(this).val()
+        if (text === '') {
+          $(this)
+            .siblings('p')
+            .text('')
+        }
+      })
+      $('.phone').blur(function() {
+        var text = $(this).val()
+        var result8 = emailRe8.test(text)
+        if (text === '') {
+          $(this)
+            .siblings('p')
+            .text('')
+        } else {
+          if (!result8) {
+            $(this)
+              .siblings('p')
+              .text('手机号输入有误，请重新输入')
+              .css('color', 'red')
+          } else {
+            $(this)
+              .siblings('p')
+              .text('√')
+              .css('color', 'green')
+          }
+        }
+      })
+      $('.phone').keyup(function(event) {
+        var code = event.which
+        text = $(this).val()
+        if (text === '') {
+          $(this)
+            .siblings('p')
+            .text('')
+        }
+      })
+    </script>
+  </body>
+</html>

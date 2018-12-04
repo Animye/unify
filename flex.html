@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <style>
+      /* .box {
+        width: 400px;
+        height: 400px;
+        background-color: pink;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .box span {
+        height: 40px;
+        width: 60px;
+        line-height: 40px;
+        background-color: #ccc;
+        text-align: center;
+      }
+      .box span:first-child {
+        align-self: flex-end;
+      }
+      .box1 {
+        width: 60%;
+        height: 500px;
+        background-color: #ccc;
+        display: flex;
+      }
+      .box2 {
+        width: 200px;
+        background-color: hotpink;
+      }
+      .box3 {
+        background-color: brown;
+        flex-grow: 1;
+      } */
+      .taobao {
+        width: 100%;
+        /* height: 100vh; */
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        left: 0;
+
+        background-color: #ccc;
+        display: flex;
+        /* align-items: center; */
+        /* overflow: hidden; */
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+      }
+      header {
+        width: 100%;
+        height: 50px;
+        background-color: pink;
+        flex-shrink: 0;
+        /* align-self: flex-start; */
+      }
+      .main {
+        width: 100%;
+        flex-grow: 1;
+        /* height: 400px; */
+        overflow: auto;
+      }
+      /* .main::-webkit-scrollbar {
+        display: none;
+      } */
+      .main .main-inner {
+        width: 100%;
+        height: 4000px;
+        background-color: hotpink;
+      }
+      footer {
+        background-color: #000;
+        widows: 100%;
+        height: 50px;
+        flex-shrink: 0;
+        /* align-self: flex-end; */
+      }
+      .arrow {
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+      }
+
+      .arrow-down {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #ccc;
+      }
+
+      .arrow-up {
+        border-bottom: 5px solid #ccc;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        top: 50px;
+      }
+
+      .arrow-left {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid #ccc;
+        top: 100px;
+      }
+
+      .arrow-right {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid #ccc;
+        top: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      <div class="box">
+        <span>at</span> <span>world</span> <span>your</span> <span>food</span>
+        <span>why</span>
+      </div>
+      <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+      </div>
+    -->
+    <div class="taobao">
+      <header></header>
+      <div class="main">
+        <div class="main-inner">fsa dfjds fkl jsd lkf jsd lk</div>
+      </div>
+      <footer></footer>
+    </div>
+    <div style="position: relative">
+      <span class="arrow arrow-down"></span>
+      <span class="arrow arrow-up"></span>
+      <span class="arrow arrow-left"></span>
+      <span class="arrow arrow-right"></span>
+    </div>
+  </body>
+</html>

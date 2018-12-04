@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+  </head>
+  <style>
+    body {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+    label {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+    input[type='checkbox'] {
+      display: none;
+      vertical-align: middle;
+    }
+    input[type='checkbox'] + label span {
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      border: 1px solid pink;
+      display: inline-block;
+
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    input[type='checkbox']:checked + label span {
+      background-image: url('./images/duigou.png');
+    }
+    .pic {
+      width: 1100px;
+      height: 393px;
+      overflow: hidden;
+      margin: 0 auto;
+      position: relative;
+    }
+    .pic > img {
+      display: block;
+      top: 0;
+      position: absolute;
+      transition: all 0.5s;
+    }
+    .counter {
+      width: 300px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+    }
+    .counter .panel {
+      display: block;
+      width: 300px;
+      height: 75px;
+      outline: 0;
+      font-size: 50px;
+      background-color: #e8eceb;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+    }
+    .counter-left {
+      width: 225px;
+      float: left;
+    }
+    .counter-left .num1,
+    .del {
+      outline: 0;
+      display: block;
+      width: 75px;
+      height: 75px;
+      text-align: center;
+      float: left;
+      border: 0;
+      background-color: #e8eceb;
+      font-size: 20px;
+    }
+
+    .counter-right {
+      width: 75px;
+      float: right;
+    }
+    .counter-right .oper,
+    .result {
+      outline: 0;
+      display: block;
+      width: 75px;
+      height: 60px;
+      text-align: center;
+      border: 0;
+      background-color: #d8dbda;
+      font-size: 20px;
+    }
+    /* .pic>img:nth-child(1){
+left:0;
+}
+.pic>img:nth-child(2){
+left:220px;
+}
+.pic>img:nth-child(3){
+left:440px;
+}
+.pic>img:nth-child(4){
+left:660px;
+}
+.pic>img:nth-child(5){
+left:880px;
+} */
+  </style>
+  <body>
+    <input type="checkbox" name="" id="choice" />
+    <label for="choice"> <span></span> 尺码24</label>
+    <input class="text" type="text" value="1" />
+    <button class="up">向上</button> <button class="down">向下</button>
+    <!--
+      <div class="pic">
+
+
+
+
+
+
+
+
+
+        <img src="./images/slide-1.jpg" alt="">
+
+
+
+
+
+
+
+
+
+
+        <img src="./images/slide-2.jpg" alt="">
+
+
+
+
+
+
+
+
+
+
+        <img src="./images/slide-3.jpg" alt="">
+
+
+
+
+
+
+
+
+
+
+        <img src="./images/slide-4.jpg" alt="">
+
+
+
+
+
+
+
+
+
+
+        <img src="./images/slide-5.jpg" alt="">
+
+
+
+
+
+
+
+
+
+
+      </div>
+    -->
+    <!--
+      <input class="num1" type="text">
+
+
+
+
+
+
+
+
+
+      <input class="sign" type="text">
+
+
+
+
+
+
+
+
+
+
+      <input class="num2" type="text">
+
+
+
+
+
+
+
+
+
+
+      <input class="equal"type="button" value="=">
+
+
+
+
+
+
+
+
+
+
+      <input class='last' type="text">
+    -->
+    <div class="counter clearfix">
+      <input class="panel" type="text" />
+      <div class="counter-left">
+        <input class="num1" type="button" value="7" />
+        <input class="num1" type="button" value="8" />
+        <input class="num1" type="button" value="9" />
+        <input class="num1" type="button" value="4" />
+        <input class="num1" type="button" value="5" />
+        <input class="num1" type="button" value="6" />
+        <input class="num1" type="button" value="1" />
+        <input class="num1" type="button" value="2" />
+        <input class="num1" type="button" value="3" />
+        <input class="num1" type="button" value="." />
+        <input class="num1" type="button" value="0" />
+        <input class="del" type="button" value="删除" />
+      </div>
+      <div class="counter-right">
+        <input class="oper" type="button" value="+" />
+        <input class="oper" type="button" value="-" />
+        <input class="oper" type="button" value="*" />
+        <input class="oper" type="button" value="/" />
+        <input class="result" type="button" value="=" />
+      </div>
+    </div>
+    <input class="content" type="text" />
+    <input class="search" type="button" value="搜索" />
+    <ul></ul>
+
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script>
+      $('.up').click(function(e) {
+        var num = $('.text').val()
+
+        num = parseInt(num) + 1
+
+        //  console .log(num)
+
+        $('.text').val(num)
+      })
+
+      $('.down').click(function(e) {
+        var num = $('.text').val()
+
+        num = parseInt(num) - 1
+
+        //  console .log(num)
+
+        if (num < 1) {
+          num = 1
+        }
+
+        $('.text').val(num)
+      })
+
+      // var month = 12
+
+      // switch (month) {
+
+      //   case 12:
+
+      //     console .log(' 第一课')
+
+      //       break;
+
+      //   case 11:
+
+      //  console.log(' 第二课')
+
+      //      break;
+
+      //   default:
+
+      //   console.log('放假')
+
+      //     break;
+
+      // }
+
+      // var result = 0;
+
+      // for (var i = 1;i<=100;i++) {
+
+      //   // console.log(i)
+
+      //   result = result + i
+
+      // }
+
+      //   console.log(result)
+
+      // $('.pic>img').each(function(){
+
+      //   var cc = $(this).index() * 220
+
+      //   $(this).css('left',cc)
+
+      // })
+
+      var photo = $('.pic>img').length
+
+      var size = $('.pic').width() / photo
+
+      var picSize = $('.pic').width()
+
+      var photoSize = $('.pic>img').width()
+
+      var move = (picSize - photoSize) / (photo - 1)
+
+      for (var i = 0; i < photo; i++) {
+        var cc = i * size
+
+        $('.pic>img')
+          .eq(i)
+
+          .css('left', cc)
+      }
+
+      $('.pic>img').mouseenter(function() {
+        var int = $(this).index()
+
+        for (var j = 0; j < photo; j++) {
+          if (j <= int) {
+            $('.pic>img')
+              .eq(j)
+
+              .css('left', j * move)
+          } else {
+            $('.pic>img')
+              .eq(j)
+
+              .css('left', (j - 1) * move + photoSize)
+          }
+        }
+      })
+
+      $('.pic>img').mouseleave(function() {
+        for (var i = 0; i < photo; i++) {
+          var cc = i * size
+
+          $('.pic>img')
+            .eq(i)
+
+            .css('left', cc)
+        }
+      })
+
+      //  $('.pic>img').mouseenter(function () {
+
+      //   var int = $(this).index()
+
+      //   $('.pic>img').each(function(){
+
+      //     var eachOne = $(this).index()
+
+      //     if(eachOne <= int){
+
+      //       $(this).css('left', eachOne * move)
+
+      //     }else{
+
+      //       $(this).css('left',( eachOne - 1) * move + photoSize)
+
+      //     }
+
+      //   })
+
+      //  });
+
+      // $('.equal').click(function (e) {
+
+      //   var numOne = $('.num1').val()*1
+
+      //   var numTwo = $('.num2').val()*1
+
+      //   var sign1 = $('.sign').val()
+
+      //   var numLast = 0
+
+      //   // var numLast =
+
+      //   switch (sign1) {
+
+      //     case '+':
+
+      //      numLast =  numOne + numTwo
+
+      //       break;
+
+      //  case '-':
+
+      //       numLast = numOne - numTwo
+
+      //       break;
+
+      //       case '*':
+
+      //       numLast = numOne * numTwo
+
+      //       break;
+
+      //       case '/':
+
+      //       numLast = numOne / numTwo
+
+      //       break;
+
+      //     // default:
+
+      //     //   break;
+
+      //   }
+
+      //   $('.last').val(numLast)
+
+      // });
+
+      var num = ''
+
+      var oper = ''
+
+      var nu = ''
+
+      var result = 0
+
+      $('.num1').click(function(e) {
+        var g = $(this).val()
+
+        //  num = num + g
+
+        //  $('.panel').val(num)
+
+        if (oper === '') {
+          num = num + g
+
+          $('.panel').val(num)
+        } else {
+          nu = nu + g
+
+          $('.panel').val(num + oper + nu)
+        }
+      })
+
+      $('.oper').click(function() {
+        if (nu) {
+          switch (oper) {
+            case '+':
+              result = num * 1 + nu * 1
+
+              break
+
+            case '-':
+              result = num * 1 - nu * 1
+
+              break
+
+            case '*':
+              result = num * 1 * (nu * 1)
+
+              break
+
+            case '/':
+              result = (num * 1) / (nu * 1)
+
+              break
+          }
+
+          result = result.toFixed(2)
+
+          nu = ''
+
+          num = ''
+
+          oper = ''
+        }
+
+        var p = $(this).val()
+
+        oper = oper + p
+
+        if (result && !num) {
+          num = result
+        }
+
+        $('.panel').val(num + oper)
+      })
+
+      $('.result').click(function() {
+        switch (oper) {
+          case '+':
+            result = num * 1 + nu * 1
+
+            break
+
+          case '-':
+            result = num * 1 - nu * 1
+
+            break
+
+          case '*':
+            result = num * 1 * (nu * 1)
+
+            break
+
+          case '/':
+            result = (num * 1) / (nu * 1)
+
+            break
+        }
+
+        result = result.toFixed(2)
+
+        $('.panel').val(result)
+
+        nu = ''
+
+        num = ''
+
+        oper = ''
+      })
+
+      $('.del').click(function() {
+        if (oper === '') {
+          num = ''
+
+          $('.panel').val(num)
+        } else {
+          nu = ''
+
+          num = ''
+
+          oper = ''
+
+          // result = ''
+
+          $('.panel').val('')
+        }
+      })
+
+      //   $('.num1').click(function (e) {
+
+      //     if (result === true) {
+
+      //       num = ''
+
+      //       nu = ''
+
+      //       oper = ''
+
+      //       $('.panel').val(num)
+
+      //     }
+
+      // });
+
+      // var cat = {
+
+      //    name:'小白',
+
+      //    age: 2 ,
+
+      //    song:function(){
+
+      //      console.log('汪汪汪')
+
+      //    }
+
+      // }
+
+      // console.log(cat.name)
+
+      // cat.song()
+
+      // var arr =  [1,2,3,4,5,6,7,8,9,10]
+
+      // var num = arr.push(15)
+
+      //   var nu = arr.push(18)
+
+      //   console.log(num)
+
+      //   console.log(nu)
+
+      //   for (let i = 0; i < arr.length; i++) {
+
+      //     console.log(arr[i])
+
+      //   }
+
+      var animals = [
+        { name: '小红', age: 8 },
+
+        { name: '小白', age: 2 },
+        { name: '小白', age: 10 },
+        { name: '小白', age: 2 },
+        { name: '小棕', age: 2 },
+        { name: '小黑', age: 6 }
+      ]
+      function add(ani, ul) {
+        for (var j = 0; j < ani.length; j++) {
+          var animal = ani[j]
+
+          var li = $('<li>')
+
+          li.html(
+            `姓名:<span>${animal.name}</span> 年龄:<span>${animal.age}</span> `
+          )
+          ul.append(li)
+        }
+      }
+      add(animals, $('ul'))
+      // for (let i = 0; i < animals.length; i++) {
+      //   var animal = animals[i]
+
+      //   //  var animalp = animals.pop()
+
+      //   //  console.log(animals)
+
+      //   var li = $('<li>')
+
+      //   li.html(
+      //     `姓名:<span>${animal.name}</span> 年龄:<span>${animal.age}</span> `
+      //   )
+
+      //   // var spanOne = $('<span>').text(animal.name)
+
+      //   // var spanTwo = $('<span>').text(animal.age)
+
+      //   // li.append(spanOne).append(spanTwo)
+
+      //   $('ul').append(li)
+      // }
+
+      // $('.search').click(function(e) {
+      //   var content = $('.content').val()
+
+      //   for (var i = 0; i < animals.length; i++) {
+      //     var animal = animals[i]
+
+      //     if (content * 1 === animal.age) {
+
+      //       // $('ul').html(
+      //       //   li.html(
+      //       //     `姓名:<span>${animal.name}</span> 年龄:<span>${
+      //       //       animal.age
+      //       //     }</span> `
+      //       //   )
+      //       // )
+      //       $('ul>li')
+      //         .eq(i).siblings().remove()
+
+      //     }
+      //   }
+      // })
+      $('.search').click(function(e) {
+        var content = $('.content').val()
+        // var animalNew = []
+        // for (var i = 0; i < animals.length; i++) {
+        //   var animal = animals[i]
+
+        //   if (content * 1 === animal.age || animal.name === content) {
+        //     animalNew.push(animal)
+        //   }
+        // }
+        var animalNew = animals.filter(function(animal, index) {
+          return content * 1 === animal.age || animal.name === content
+        })
+        $('ul').empty()
+
+        add(animalNew, $('ul'))
+        // for (var j = 0; j < animalNew.length; j++) {
+        //   var animalLast = animalNew[j]
+
+        //   var li = $('<li>')
+
+        //   li.html(
+        //     `姓名:<span>${animalLast.name}</span> 年龄:<span>${
+        //       animalLast.age
+        //     }</span> `
+        //   )
+        //   $('ul').append(li)
+        // }
+      })
+
+      // function pdd (num1,num2){
+      //    var result = num1 + num2
+      //    console.log(result)
+      // }
+      // pdd(60,70)
+      // function pdd(num1) {
+      //     var result = num1* num1 * num1
+      //     console.log(result)
+      //   }
+      //   pdd(2)
+
+      //   var arr =[1,2,3,4,5,6,7,8,]
+      //   var arr1 = arr.filter(function(ele){
+      //         return  ele % 2 === 1
+
+      //   })
+      //   console.log(arr1)
+      //   var result =arr.reduce(function(num,ele,index){
+      //     if(ele % 2){
+      //      return num += ele
+      //     }else{
+      //       return num
+      //     }
+
+      //   },0)
+      var air = [44, 25, 83, 114, 5, 886, 17, 58]
+
+      for (var j = 0; j < air.length - 1; j++) {
+        for (var i = 0; i < air.length - 1 - j; i++) {
+          var num1 = air[i]
+          if (num1 > air[i + 1]) {
+            var num2 = air[i + 1]
+            air[i + 1] = num1
+            air[i] = num2
+            // console.log(air[i])
+            // console.log(num1)
+          }
+        }
+      }
+
+      console.log(air)
+    </script>
+  </body>
+</html>

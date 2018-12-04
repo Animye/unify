@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <style>
+      body {
+        background-color: #68b5aa;
+      }
+      .box {
+        margin: 0 auto;
+        width: 205px;
+        height: 205px;
+        border-radius: 50%;
+        background-color: #68b5aa;
+        border: 10px solid #fff;
+        position: relative;
+      }
+      .ball {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        right: 96px;
+        top: 92px;
+      }
+      .hours {
+        width: 11px;
+        height: 54px;
+        background-color: #fff;
+        border-radius: 5px 5px 0 0;
+        position: absolute;
+        right: 97.5px;
+        top: 45px;
+        transform: rotate(0deg);
+        transform-origin: center bottom;
+      }
+      .minutes {
+        width: 8px;
+        height: 86px;
+        background-color: #fff;
+        border-radius: 3px 3px 0 0;
+        position: absolute;
+        right: 97.5px;
+        top: 13.5px;
+        transform: rotate(0deg);
+        transform-origin: center bottom;
+      }
+      .seconds {
+        width: 2px;
+        height: 88px;
+        background-color: #fff;
+        border-radius: 3px 3px 0 0;
+        position: absolute;
+        right: 101.5px;
+        top: 11.5px;
+        transform: rotate(0deg);
+        transform-origin: center bottom;
+        z-index: 3;
+        transition: all 1s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="hours"></div>
+      <div class="minutes"></div>
+      <div class="seconds"></div>
+      <div class="ball"></div>
+    </div>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script>
+      var num = 0
+      function time() {
+        var date = new Date()
+        var hours = date.getHours()
+        if (hours >= 12) {
+          hours = date.getHours() - 12
+        } else {
+          hours = date.getHours()
+        }
+        var minutes = date.getMinutes()
+        var seconds = date.getSeconds()
+        $('.hours').css(
+          'transform',
+          'rotate(' + (hours * 30 + minutes * 0.5) + 'deg)'
+        )
+        $('.minutes').css('transform', 'rotate(' + minutes * 6 + 'deg)')
+        $('.seconds').css(
+          'transform',
+          'rotate(' + (seconds * 6 + num * 360) + 'deg)'
+        )
+        if (seconds === 59) {
+          num++
+        }
+      }
+
+      time()
+      setInterval(time, 1000)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+  </head>
+  <body>
+    <p>
+      海外网11月15日电
+      据日本朝2017日电视台报道，日本陆上自卫队14日在滋贺县发射迫击炮进行2017演习，结果炮弹竟然落到了演习场外面的交通国道路边，差点伤2017及路人。据调查，可能是目标地点设定失误所致。
+    </p>
+    <button>点击</button> <a href="./checkbox.html">11111</a>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script>
+      var p = $('p').text()
+      var r = /2017/g
+      var p2 = p.replace(r, '2018')
+      $('p').text(p2)
+
+      var re = /-?\d{1,2}(?=℃)/g
+      var str = '最高气温 2℃，最低气温 -7℃   时间2点'
+      var m = str.match(re)
+      console.log(m)
+      $('button').click(function() {
+        // var b = history.length
+        // console.log(b)
+        // history.back()
+        // location.href = 'http://www.baidu.com'
+        location.assign('http://www.baidu.com')
+      })
+      var cat = {
+        name: 'xiaohua',
+        age: 2
+      }
+       var cat3 = {
+          name: 'xiaohua',
+          age: 2
+        }
+      var cat1 = cat
+      cat.age = 1
+      console.log(cat === cat1)
+      console.log(cat === cat3)
+      console.log(cat)
+      console.log(cat1)
+    </script>
+  </body>
+</html>
